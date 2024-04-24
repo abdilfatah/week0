@@ -26,4 +26,8 @@ jobs:
           
       - name: run tests
         run: 
+<<<<<<< HEAD
           python -m unittest tests/test.py
+=======
+          python -m unittest tests/test.py
+>>>>>>> f5f8136f6d797745446c73c1004aa7c27937d36b
