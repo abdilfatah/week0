@@ -3,26 +3,25 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-    -task1
+    - task1
 
 jobs:
   build:
-    run-on:
+  runs-on:
       windows
 
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
+steps:
+  - name: checkout
+    uses: actions/checkout@v2
 
-      - name: set up python
-        uses: actions/setup-python@v2
-        with:
-        python-version: '3.x'
+  - name: set up python
+    uses: actions/setup-python@v2
+    with:
+      python-version: '3.x'
 
-      - name: install dependencies
-        run: /
-        python -m pip install --upgrade pip pip install -r requirements.txt
+  - name: install dependencies
+    run: /python -m pip install --upgrade pip pip install -r requirements.txt
       
-      - name: run tests
-        run: /
-          python -m unittest tests/test.py
+  - name: run tests
+    run: /
+      python -m unittest tests/test.py
